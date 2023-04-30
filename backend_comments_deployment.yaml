@@ -44,7 +44,7 @@ spec:
                 name:  env-configmap
                 key: AWS_BUCKET 
         ports:
-        - containerPort: 80
+        - containerPort: 8003
         volumeMounts:
           - name: aws-secret
             mountPath: '/root/.aws'
