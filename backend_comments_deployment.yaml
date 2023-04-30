@@ -1,48 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-user
+  name: backend_comments
   labels:
-    run: backend-user
+    run: backend_comments
 spec:
   replicas: 2
   selector:
     matchLabels:
-      run: backend-user
+      run: backend_comments
   template:
     metadata:
       labels:
-        run: backend-user
+        run: backend_comments
     spec:
       containers:
-      - name: backend-user
-        image: abdel124/udagram-api-user
+      - name: backend_comments
+        image: abdel124/udatube-api-comment
         resources:
           limits:
             cpu: 500m
           requests:
             cpu: 200m
         env:
-          - name: POSTGRES_USERNAME
-            valueFrom:
-              configMapKeyRef:
-                name: env-configmap
-                key: POSTGRES_USERNAME
-          - name: POSTGRES_PASSWORD
-            valueFrom:
-              configMapKeyRef:
-                name: env-configmap
-                key: POSTGRES_PASSWORD
-          - name: POSTGRES_DB
-            valueFrom:
-              configMapKeyRef:
-                name: env-configmap
-                key: POSTGRES_DB
-          - name: POSTGRES_HOST
-            valueFrom:
-              configMapKeyRef:
-                name: env-configmap
-                key: POSTGRES_HOST
           - name: AWS_REGION
             valueFrom:
               configMapKeyRef:

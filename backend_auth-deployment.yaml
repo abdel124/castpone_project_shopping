@@ -1,48 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-feed
+  name: backend_auth
   labels:
-    run: backend-feed
+    run: backend_auth
 spec:
   replicas: 2
   selector:
     matchLabels:
-      run: backend-feed
+      run: backend_auth
   template:
     metadata:
       labels:
-        run: backend-feed
+        run: backend_auth
     spec:
       containers:
-      - name: backend-feed
-        image: abdel124/udagram-api-feed
+      - name: backend_auth
+        image: abdel124/uudatube-api-auth
         resources:
           limits:
             cpu: 500m
           requests:
             cpu: 200m
         env:
-          - name: POSTGRES_USERNAME
-            valueFrom:
-              configMapKeyRef:
-                name: env-configmap
-                key: POSTGRES_USERNAME
-          - name: POSTGRES_PASSWORD
-            valueFrom:
-              configMapKeyRef:
-                name: env-configmap
-                key: POSTGRES_PASSWORD
-          - name: POSTGRES_DB
-            valueFrom:
-              configMapKeyRef:
-                name: env-configmap
-                key: POSTGRES_DB
-          - name: POSTGRES_HOST
-            valueFrom:
-              configMapKeyRef:
-                name: env-configmap
-                key: POSTGRES_HOST
           - name: AWS_REGION
             valueFrom:
               configMapKeyRef:

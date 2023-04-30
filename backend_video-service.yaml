@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend-feed
+  name: backend_video
   labels:
-    run: backend-feed
+    run: backend_video
 spec:
   ports:
   - port: 8080
     protocol: TCP
   selector:
-    run: backend-feed
+    run: backend_video

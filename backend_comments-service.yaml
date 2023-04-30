@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend-user
+  name: backend_comments
   labels:
-    run: backend-user
+    run: backend_comments
 spec:
   ports:
   - port: 8080
     protocol: TCP
   selector:
-    run: backend-user
+    run: backend_comments
