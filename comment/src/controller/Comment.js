@@ -1,9 +1,11 @@
 const AWS = require('aws-sdk');
+const  config  = require('../config/config.js') ;
+
+const credentials = new AWS.SharedIniFileCredentials({profile: config.aws_profile});
+AWS.config.credentials = credentials;
 
 AWS.config.update({
-	region: 'us-east-1',
-	accessKeyId: 'AKIAVC5MYQCC4HWTNU7U',
-	secretAccessKey: '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',
+	region: config.aws_region
 });
 
 const DocumentClient = new AWS.DynamoDB.DocumentClient();

@@ -1,0 +1,17 @@
+apiVersion: v1
+data:
+    AWS_REGION: us-east-1
+    AWS_PROFILE: user_1
+    AWS_BUCKET: udagram-api-media
+    JWT_SECRET: hello_world
+    POSTGRES_HOST: udagramabdeldev-1.cw4set4p5n3k.us-east-1.rds.amazonaws.com
+    POSTGRES_USERNAME: udagramabdeldev
+    POSTGRES_DB: udagramabdeldev-1
+    POSTGRES_PASSWORD: Boulitor129
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2022-12-15T02:58:02Z"
+  name: env-configmap
+  namespace: default
+  resourceVersion: "38703"
+  uid: 700c01f4-3193-48a6-9110-19aec8f72543

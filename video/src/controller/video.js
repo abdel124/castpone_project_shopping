@@ -2,10 +2,12 @@ const AWS = require('aws-sdk');
 const { v4: uuidv4 } = require('uuid');
 const VIDEO_S3_BUCKET = 's3-video-abdel'
 const CLOUDFRONT_DOMAINE = 'd1nfrm13yl8x0h.cloudfront.net'
+
+const credentials = new AWS.SharedIniFileCredentials({profile: config.aws_profile});
+AWS.config.credentials = credentials;
+
 AWS.config.update({
-	region: 'us-east-1',
-	accessKeyId: 'AKIAVC5MYQCC4HWTNU7U',
-	secretAccessKey: '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',
+	region: config.aws_region
 });
 
  const s3 = new AWS.S3({
