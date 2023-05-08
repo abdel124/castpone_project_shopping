@@ -1,0 +1,18 @@
+version: "3"
+services:
+  reverseproxy:
+    build:
+      context: ./reverse-proxy
+    image: reverseproxy
+  backend_auth:
+    build:
+      context: ./auth
+    image: udatube-api-auth
+  backend_video:
+    build:
+      context: ./video
+    image: udatube-api-video
+  backend_comments:
+    build:
+      context: ./comment
+    image: udatube-api-comment

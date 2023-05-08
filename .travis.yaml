@@ -15,17 +15,19 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t udatube-api-auth  ./udatube-api-auth
+  - docker build -t udatube-api-auth  ./auth
   - docker tag udatube-api-auth abdel124/udatube-api-auth:latest
-  - docker build -t udatube-api-video ./udatube-api-video
+  - docker build -t udatube-api-video ./video
   - docker tag udatube-api-video abdel124/udatube-api-video:latest
-  - docker build -t reverseproxy ./reverseproxy
+  - docker build -t reverseproxy ./reverse-proxy
   - docker tag reverseproxy abdel124/reverseproxy:latest
+  - docker build -t udatube-api-comment ./comment
+  - docker tag udatube-api-comment abdel124/udatube-api-comment:latest
 
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push abdel124/udagram-api-user
-  - docker push abdel124/udagram-api-feed
-  - docker push abdel124/udagram-reverseproxy
-  - docker push abdel124/udagram-frontend
+  - docker push abdel124/udatube-api-auth
+  - docker push abdel124/udatube-api-video
+  - docker push abdel124/udatube-api-comment
+  - docker push abdel124/reverseproxy

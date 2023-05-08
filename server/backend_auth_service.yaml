@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-auth
+  labels:
+    run: backend-auth
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+  selector:
+    run: backend-auth

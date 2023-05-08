@@ -1,0 +1,54 @@
+version: "3"
+services:
+  reverseproxy:
+    build:
+      context: ./reverse-proxy
+    ports:
+      - "8080:8080"
+    image: reverseproxy
+    depends_on:
+      - backend_auth
+      - backend_video
+      - backend_comment
+  backend-auth:
+    build:
+      context: ./auth
+    ports:
+      - "8001:8001"
+    image: udatube-api-auth
+    volumes:
+    - $HOME/.aws/credentials:/root/.aws/credentials:ro
+    environment:
+      AWS_REGION: $AWS_REGION 
+      AWS_PROFILE: $AWS_PROFILE 
+      AWS_BUCKET: $AWS_BUCKET
+      JWT_SECRET: $JWT_SECRET
+      CLOUD_FRONT : $CLOUD_FRONT
+  backend-video:
+    build:
+      context: ./video
+    ports:
+      - "8003:8003"
+    image: udatube-api-video
+    volumes:
+    - $HOME/.aws/credentials:/root/.aws/credentials:ro
+    environment:
+      AWS_REGION: $AWS_REGION 
+      AWS_PROFILE: $AWS_PROFILE 
+      AWS_BUCKET: $AWS_BUCKET
+      JWT_SECRET: $JWT_SECRET
+      CLOUD_FRONT : $CLOUD_FRONT
+  backend-comment:
+    build:
+      context: ./comment
+    ports:
+      - "8002:8002"
+    image: udatube-api-comment
+    volumes:
+    - $HOME/.aws/credentials:/root/.aws/credentials:ro
+    environment:
+      AWS_REGION: $AWS_REGION 
+      AWS_PROFILE: $AWS_PROFILE 
+      AWS_BUCKET: $AWS_BUCKET
+      JWT_SECRET: $JWT_SECRET
+      CLOUD_FRONT : $CLOUD_FRONT
