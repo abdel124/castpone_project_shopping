@@ -43,6 +43,11 @@ spec:
               configMapKeyRef:
                 name:  env-configmap
                 key: AWS_BUCKET 
+          - name: CLOUD_FRONT
+            valueFrom:
+              configMapKeyRef:
+                name:  env-configmap
+                key: CLOUD_FRONT
         ports:
         - containerPort: 80
         volumeMounts:

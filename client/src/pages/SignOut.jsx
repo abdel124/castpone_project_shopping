@@ -77,7 +77,7 @@ const Link = styled.span`
       e.preventDefault();
       dispatch(loginStart());
       try {
-        const res = await axios.post("/signout");
+        const res = await axios.post("/api/signout");
         dispatch(logout());
         navigate("/")
       } catch (err) {

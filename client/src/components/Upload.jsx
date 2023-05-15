@@ -123,12 +123,12 @@ const Upload = ({ setOpen , user}) => {
       alert('please check if you have selected video or image')
     }
     else {
-    const res = await axios.post("/video", {...inputs})
-    console.log(res.data[0])
-    console.log(res.data[1])
+    const res = await axios.post("/api/video", {...inputs})
+
     await axios.put(res.data[0], img,options)
     await axios.put(res.data[1], video,options_1)
     setOpen(false)
+    window.location.reload()
     //res.status===200 && navigate(`/video/${res.data.id}`)
     }
     

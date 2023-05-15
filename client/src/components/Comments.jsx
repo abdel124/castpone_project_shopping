@@ -57,14 +57,18 @@ const Comments = ({videoId}) => {
 
 
   useEffect(() => {
+    console.log('yes 1')
     const fetchComments = async () => {
       try {
        
-        const res = await axios.get(`/comments/?videoId=${videoId}`);
+        const res = await axios.get(`/api/comments/?videoId=${videoId}`);
+        console.log('yes 1')
+        console.log(res)
         setComments(res.data.Items);
       } catch (err) {}
     };
     fetchComments();
+    console.log('yes')
     return () => {
       setComments([]);
     };
@@ -78,7 +82,7 @@ const Comments = ({videoId}) => {
     if (event.keyCode === 13) { // Enter key code
       event.preventDefault();
       if (comment.trim()) {
-        const res = await axios.post(`/comments/?videoId=${videoId}`, {username : currentUser.user,userId : currentUser.email,desc:comment});
+        const res = await axios.post(`/api/comments/?videoId=${videoId}`, {username : currentUser.user,userId : currentUser.email,desc:comment});
         const updatedComments = [...comments, res.data];
         setComments(updatedComments);
         
@@ -97,7 +101,7 @@ const Comments = ({videoId}) => {
           onKeyDown={handleKeyDown} />
       </NewComment>
       }
-      {comments.map((comment)=>(
+      {comments && comments.map((comment)=>(
         <DivContainer>
         <Comment key={comment.id} comment={comment} user={currentUser} />
         </DivContainer>

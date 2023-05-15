@@ -70,7 +70,7 @@ const Comment = ({ comment , user }) => {
         else
         {
         if (user.email == comment.userId){
-          const res = await axios.delete(`/comments/?id=${comment.id}`);
+          const res = await axios.delete(`/api/comments/?id=${comment.id}`);
           res.status===200 && window.location.reload();
         }
         else {
@@ -82,7 +82,7 @@ const Comment = ({ comment , user }) => {
   }
   return (
     <Container>
-      {user && <Avatar src={user.img} />}
+      {user && comment && <Avatar src={user.img} />}
       <Details>
         <Name>
            <Date>{comment.username}</Date>

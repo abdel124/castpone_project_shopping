@@ -28,7 +28,7 @@ services:
     build:
       context: ./video
     ports:
-      - "8003:8003"
+      - "8002:8002"
     image: udatube-api-video
     volumes:
     - $HOME/.aws/credentials:/root/.aws/credentials:ro
@@ -42,7 +42,7 @@ services:
     build:
       context: ./comment
     ports:
-      - "8002:8002"
+      - "8003:8003"
     image: udatube-api-comment
     volumes:
     - $HOME/.aws/credentials:/root/.aws/credentials:ro

@@ -36,7 +36,6 @@ const random_v2 = async (TABLE_NAME,videoId) => {
 	const params = {
 		
 		TableName: TABLE_NAME,
-		Limit: 4, // retrieve only one item
 	  };
 	  const result = await DocumentClient.scan(params).promise();
 

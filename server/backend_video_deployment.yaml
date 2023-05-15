@@ -38,6 +38,11 @@ spec:
               configMapKeyRef:
                 name:  env-configmap
                 key: AWS_PROFILE 
+          - name: CLOUD_FRONT
+            valueFrom:
+              configMapKeyRef:
+                name:  env-configmap
+                key: CLOUD_FRONT
           - name: AWS_BUCKET
             valueFrom:
               configMapKeyRef:

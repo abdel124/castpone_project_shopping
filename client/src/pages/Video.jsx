@@ -126,8 +126,10 @@ const Video = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const videoRes = await axios.get(`/video/find/${path}`);
+        const videoRes = await axios.get(`/api/video/find/${path}`);
         dispatch(fetchSuccess(videoRes.data));
+        console.log('current vdeio')
+        console.log(currentVideo.Items[0].title)
       } catch (err) {}
     };
     fetchData();
@@ -142,15 +144,15 @@ const Video = () => {
   return (
     <Container>
       <Content>
-        <VideoWrapper onClick={handleChange}>
+        <VideoWrapper>
          {currentVideo && <VideoFrame  src={currentVideo.Items[0].videoUrl} controls />} 
         </VideoWrapper>
-        <Title>{currentVideo.Items[0].title}</Title>
+        {currentVideo &&  <Title>{currentVideo.Items[0].title}</Title> }
         <Details>
         </Details>
         <Hr />
         <Hr />
-       <Comments videoId={currentVideo.Items[0].id} />
+       {currentVideo && <Comments videoId={currentVideo.Items[0].id} />}
       </Content>
     </Container>
   );

@@ -80,7 +80,7 @@ const SignIn = () => {
     e.preventDefault();
     dispatch(loginStart());
     try {
-      const res = await axios.post("/signin", { email, password });
+      const res = await axios.post("/api/signin", { email, password });
       dispatch(loginSuccess(res.data));
       navigate("/")
     } catch (err) {
@@ -92,8 +92,9 @@ const SignIn = () => {
     e.preventDefault();
     dispatch(loginStart());
     try {
-      const res = await axios.post("/signup", { name,email, password });
-      dispatch(loginSuccess(res.data));
+      const res = await axios.post("/api/signup", { name,email, password });
+      const res_singin = await axios.post("/api/signin", { email, password });
+      dispatch(loginSuccess(res_singin.data));
       navigate("/")
     } catch (err) {
       dispatch(loginFailure());
