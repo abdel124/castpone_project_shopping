@@ -1,5 +1,5 @@
 
-http://ae8707f6e7eba42989e2b705dfc9a8dc-1265897386.us-east-1.elb.amazonaws.com\
+http://ae8707f6e7eba42989e2b705dfc9a8dc-1265897386.us-east-1.elb.amazonaws.com
 
 This app allows you\
 \
