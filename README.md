@@ -22,7 +22,7 @@ export JWT_SECRET="" // use your own jwt secret
 ```
 ````
 ## client deployement :
-so after clonning the repository locally just go server folder and run :
+so after clonning the repository locally just go to client folder and run :
 to install all dependency 
 ### `npm i --force`
 
