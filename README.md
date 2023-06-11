@@ -21,6 +21,27 @@ export AWS_BUCKET="s3-video-abdel"
 export JWT_SECRET="" // use your own jwt secret
 ```
 ````
+
+this variables are used in our code stored locally for security purpose as you can see in this block we have config file for each service
+
+````
+```
+const config = {
+  'aws_region': process.env.AWS_REGION,
+  'aws_profile': process.env.AWS_PROFILE,
+  'aws_media_bucket': process.env.AWS_BUCKET,
+  'cloudfront' : process.env.CLOUD_FRONT,
+  'url': process.env.URL,
+  'jwt': {
+    'secret': process.env.JWT_SECRET,
+  },
+};
+
+module.exports = {
+  config,
+};
+```
+````
 ## client side :
 so after clonning the repository locally just go to client folder and run :
 to install all dependency 
