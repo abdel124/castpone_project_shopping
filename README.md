@@ -18,7 +18,7 @@ export AWS_REGION="us-east-1"
 export CLOUD_FRONT="d1nfrm13yl8x0h.cloudfront.net"
 export AWS_PROFILE="default"
 export AWS_BUCKET="s3-video-abdel"
-export JWT_SECRET="" // user your own jwt secret
+export JWT_SECRET="" // use your own jwt secret
 ```
 ````
 
