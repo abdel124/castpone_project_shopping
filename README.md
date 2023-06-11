@@ -14,10 +14,13 @@ and for add the all variable to ~/bash_proilfe depending on your operations syst
 you can see them example 
 ````
 ```
-export AWS_REGION="us-east-1"
-export CLOUD_FRONT="d1nfrm13yl8x0h.cloudfront.net"
-export AWS_PROFILE="default"
-export AWS_BUCKET="s3-video-abdel"
+after you create your aws account and IAM user you have to have all this infromation to populate these variables
+need to create s3 bucket , and cloud front domaine and profile 
+
+export AWS_REGION="" // aws region
+export CLOUD_FRONT="" //cloud front domaine
+export AWS_PROFILE="" // aws profile of IAM user
+export AWS_BUCKET="" // s3 bucket to store your videos and images
 export JWT_SECRET="" // use your own jwt secret
 ```
 ````
