@@ -21,7 +21,7 @@ export AWS_BUCKET="s3-video-abdel"
 export JWT_SECRET="" // use your own jwt secret
 ```
 ````
-## client deployement :
+## client side :
 so after clonning the repository locally just go to client folder and run :
 to install all dependency 
 ### `npm i --force`
