@@ -21,5 +21,27 @@ export AWS_BUCKET="s3-video-abdel"
 export JWT_SECRET="" // use your own jwt secret
 ```
 ````
+## client deployement :
+so after clonning the repository locally just go server folder and run :
+to install all dependency 
+### `npm i --force`
+
+after the installation is done 
+### npm start
+
+Note : in package.json we are using reverse proxy to reroute to different port since our client is going to run on 
+### http:localhost:3000
+
+so our backend going to run on 8080 so as you can in this 
+block of code in packae.json file 
+````
+```
+  "proxy": "http://localhost:8080/",
+  "allowedHosts": [
+    "localhost",
+    "127.0.0.1"
+  ]
+```
+````
 
 
