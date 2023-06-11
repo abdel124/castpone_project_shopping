@@ -33,7 +33,7 @@ Note : in package.json we are using reverse proxy to reroute to different port s
 ### http:localhost:3000
 
 so our backend going to run on 8080 so as you can in this 
-block of code in packae.json file 
+block of code in package.json file 
 ````
 ```
   "proxy": "http://localhost:8080/",
@@ -43,5 +43,13 @@ block of code in packae.json file
   ]
 ```
 ````
+
+## server side :
+for server side since we are follwoing microservice architecture we are doploying our services on docker , and our backened is composed on four services
+### -authentification
+### -user
+### -video
+### -comment
+### nginx reverse proxy
 
 
