@@ -47,9 +47,25 @@ block of code in package.json file
 ## server side :
 for server side since we are follwoing microservice architecture we are doploying our services on docker , and our backened is composed on four services
 ### -authentification
+   handle all authentification request
 ### -user
+    user operations login , logout .. 
 ### -video
+    handle video operations request adding video , request video , search for video
 ### -comment
-### nginx reverse proxy
+    handle comments request , add comment , remove comment ....
+### -nginx reverse proxy
+    for reverse proxy we use it to forward request to the correct service it behaves like load balancer
+
+so to deploy these servers just go to server folder where you can find the docker-compose.yaml file that  contains the difinitions of 
+our services each servvice is gonna be a docker image
+
+and run the follwoing commands
+````
+```
+docker compose build  //to build the images
+docker compose up // to start the services
+```
+````
 
 
