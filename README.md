@@ -22,6 +22,8 @@ export CLOUD_FRONT="" //cloud front domaine
 export AWS_PROFILE="" // aws profile of IAM user
 export AWS_BUCKET="" // s3 bucket to store your videos and images
 export JWT_SECRET="" // use your own jwt secret
+
+for cloud front don't forget to add permission policy to s3 bucket to give access to cloud front.
 ```
 ````
 
