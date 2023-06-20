@@ -16,14 +16,12 @@ aws_secret_access_key = ""
 ````
 
 and for add the all variable to ~/.bash_proilfe depending on your operations system this example for mac user.
-
-````
 after you create your aws account and IAM user you have to have all this infromation to populate these variables
 need to create s3 bucket , and cloud front domaine and profile  
 create dynamo db tables (video , user , comment) we are using these names in our code
-
 after creating the resource populate these varibales
 
+````
 export AWS_REGION="" // aws region
 export CLOUD_FRONT="" //cloud front domaine
 export AWS_PROFILE="" // aws profile of IAM user
