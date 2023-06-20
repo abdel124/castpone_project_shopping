@@ -4,9 +4,7 @@ in this app
 link to repository : 
 
 ````
-```
 https://github.com/abdel124/castpone_project_shopping
-```
 ````
 
 # Local Deployment 
