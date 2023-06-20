@@ -15,8 +15,8 @@ aws_access_key_id = ""
 aws_secret_access_key = ""
 ````
 
-and for add the all variable to ~/.bash_proilfe depending on your operations system this example for mac user
-you can see them example of config file you can sse : server/auth/src/config/config.js how we are using these variables
+and for add the all variable to ~/.bash_proilfe depending on your operations system this example for mac user.
+
 ````
 after you create your aws account and IAM user you have to have all this infromation to populate these variables
 need to create s3 bucket , and cloud front domaine and profile 
@@ -26,6 +26,8 @@ export CLOUD_FRONT="" //cloud front domaine
 export AWS_PROFILE="" // aws profile of IAM user
 export AWS_BUCKET="" // s3 bucket to store your videos and images
 export JWT_SECRET="" // use your own jwt secret
+
+you can see them example of config file you can sse : server/auth/src/config/config.js how we are using these variables
 
 for cloud front don't forget to add permission policy to s3 bucket to give access to cloud front.
 ````
