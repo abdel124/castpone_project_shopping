@@ -19,7 +19,10 @@ and for add the all variable to ~/.bash_proilfe depending on your operations sys
 
 ````
 after you create your aws account and IAM user you have to have all this infromation to populate these variables
-need to create s3 bucket , and cloud front domaine and profile 
+need to create s3 bucket , and cloud front domaine and profile  
+create dynamo db tables (video , user , comment) we are using these names in our code
+
+after creating the resource populate these varibales
 
 export AWS_REGION="" // aws region
 export CLOUD_FRONT="" //cloud front domaine
@@ -27,13 +30,12 @@ export AWS_PROFILE="" // aws profile of IAM user
 export AWS_BUCKET="" // s3 bucket to store your videos and images
 export JWT_SECRET="" // use your own jwt secret
 
-you can see them example of config file you can sse : server/auth/src/config/config.js how we are using these variables
 
 for cloud front don't forget to add permission policy to s3 bucket to give access to cloud front.
 ````
 
 this variables are used in our code stored locally for security purpose as you can see in this block we have config file for each service
-
+you can see them example of config file you can sse : server/auth/src/config/config.js how we are using these variables
 ````
 const config = {
   'aws_region': process.env.AWS_REGION,
