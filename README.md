@@ -16,12 +16,10 @@ aws_secret_access_key = ""
 ````
 
 and for add the all variable to ~/.bash_proilfe depending on your operations system this example for mac user
-you can see them example 
-
+you can see them example of config file you can sse : server/auth/src/config/config.js how we are using these variables
 ````
 after you create your aws account and IAM user you have to have all this infromation to populate these variables
 need to create s3 bucket , and cloud front domaine and profile 
-exmaple of config file you can sse : server/auth/src/config/config.js
 
 export AWS_REGION="" // aws region
 export CLOUD_FRONT="" //cloud front domaine
