@@ -91,6 +91,8 @@ and run the follwoing commands
 ````
 docker compose build  //to build the images
 docker compose up // to start the services
+
+you can notice we are using different port for each service because they are going to run on the same machine so we make sure they have different port number otherwise you are going to see the error that the port already useb by other service 
 ````
 
 
